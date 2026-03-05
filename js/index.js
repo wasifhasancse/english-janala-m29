@@ -139,3 +139,31 @@ const showButton = (getButtonJson) => {
   });
 };
 lessonButtonSection();
+
+// search box system
+document.getElementById("search-button").addEventListener("click", () => {
+  // spinner in search loading time
+  manageSpinner(true);
+  // remove if lesson button is active
+  removeLessonActiveButton();
+
+  // select search box input
+  const searchData = document
+    .getElementById("search-box")
+    .value.trim()
+    .toLowerCase();
+
+  // get All words data by API
+  fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((getAllWordsData) => getAllWordsData.json())
+    .then((getAllWords) => {
+      const allWords = getAllWords.data;
+      const searchWords = allWords.filter((getWord) =>
+        getWord.word.toLowerCase().includes(searchData),
+      );
+
+      // display filter word by searching word
+      showWordData(searchWords);
+      manageSpinner(false);
+    });
+});

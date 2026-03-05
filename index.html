@@ -97,13 +97,30 @@
 
   <!-- Let's Learn Vocabularies section start  -->
   <section class="bg-base-200">
-    <div class="py-10 w-11/12 mx-auto flex flex-col items-center justify-center gap-5">
+    <div class="py-10 w-11/12 mx-auto flex flex-col items-center justify-center space-y-10">
       <div class="text-center ">
         <h1 class="text-4xl font-bold"><span class="text-sky-400">Let's</span> Learn Vocabularies</h1>
       </div>
       <div id="lessons-button" class="flex flex-wrap gap-2.5 items-center justify-center">
         <!-- lessons button will be here dynamically by API -->
       </div>
+
+      <!-- search box start  -->
+      <div class="join">
+        <div>
+          <label class="input">
+            <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input id="search-box" type="search" required placeholder="Search" />
+          </label>
+        </div>
+        <button id="search-button" class="btn btn-primary join-item">Search</button>
+      </div>
+      <!-- search box end  -->
     </div>
   </section>
 
