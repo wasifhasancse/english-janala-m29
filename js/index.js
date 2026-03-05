@@ -107,7 +107,7 @@ const showWordData = (getWordData) => {
   // show word list
   getWordData.forEach((wordData) => {
     const wordDataCard = document.createElement("div");
-    wordDataCard.classList = "bg-base-200 p-10 space-y-10 rounded-lg mx-auto";
+    wordDataCard.classList = "bg-base-200 p-10 space-y-10 rounded-lg shadow";
     wordDataCard.innerHTML = `
     <div class="text-center space-y-3.5">
           <h2 class="font-bold text-3xl">${wordData.word ? wordData.word : "Word পাওয়া যায় নি"}</h2>
