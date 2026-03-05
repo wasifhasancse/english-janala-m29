@@ -67,7 +67,7 @@
     <div class="bg-base-200 min-h-screen flex items-center justify-center">
       <div class="flex flex-col md:flex-row-reverse justify-between items-center w-11/12 mx-auto">
         <div>
-          <img src="./assets/hero-student.png" class="" />
+          <img src="./assets/hero-student.png" alt="hero-image" />
         </div>
         <div class="text-center md:text-left">
           <h1 class="text-5xl font-bold"><span class="text-sky-400">English</span> is Easy!!</h1>
@@ -101,7 +101,9 @@
       <div class="text-center ">
         <h1 class="text-4xl font-bold"><span class="text-sky-400">Let's</span> Learn Vocabularies</h1>
       </div>
-      <div id="lessons-button" class="flex flex-wrap gap-2.5 items-center justify-center"></div>
+      <div id="lessons-button" class="flex flex-wrap gap-2.5 items-center justify-center">
+        <!-- lessons button will be here dynamically by API -->
+      </div>
     </div>
   </section>
 
@@ -121,26 +123,25 @@
         </p>
       </div>
 
-      <!-- modal section  -->
-      <!-- Open the modal using ID.showModal() method -->
-      <button class="btn" >open modal</button>
-      <dialog id="wordDetailsModal" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
-          <h3 class="text-lg font-bold">Hello!</h3>
-          <p class="py-4">Press ESC key or click the button below to close</p>
-          <div class="modal-action">
-            <form method="dialog">
-              <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Close</button>
-            </form>
-          </div>
-        </div>
-      </dialog>
-
     </div>
   </section>
   <!-- Let's Learn Vocabularies section Data end -->
   <!-- Let's Learn Vocabularies section end -->
+
+  <!-- modal section  -->
+  <dialog id="wordDetailsModal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <div id="modal-details" class="border border-sky-100 rounded-lg p-5">
+         <!-- here modal data show dymanically by API -->
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn btn-primary">Complete Learning</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
 
   <script src="./js/index.js"></script>
 </body>
