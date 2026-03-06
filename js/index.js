@@ -6,6 +6,14 @@ const lessonButtonSection = () => {
     .then((getButtonJson) => showButton(getButtonJson.data));
 };
 
+// voice pronounce word
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
+// loading spinner
 const manageSpinner = (status) => {
   if (status) {
     document.getElementById("spinner").classList.remove("hidden");
@@ -116,7 +124,7 @@ const showWordData = (getWordData) => {
         </div>
         <div class="flex items-center justify-between">
           <button onclick="getWordDetails(${wordData.id})" class="btn btn-soft btn-primary text-xl"><i class="fa-solid fa-circle-info"></i></button>
-          <button class="btn btn-soft btn-primary text-xl"><i class="fa-solid fa-volume-high"></i></button>
+          <button onclick="pronounceWord('${wordData.word}')" class="btn btn-soft btn-primary text-xl"><i class="fa-solid fa-volume-high"></i></button>
         </div>
     `;
     wordDataCardContainer.append(wordDataCard);
